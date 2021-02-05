@@ -1,0 +1,78 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 250ms;
+  width: 100%;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__header {
+    padding: 2px;
+    position: sticky;
+    top: 0;
+    height: 70px;
+    background-color: white;
+    width: 100%;
+    z-index: 4;
+
+    & h2 {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 40px 40px;
+  }
+
+  &__body {
+    width: 800px;
+    height: 600px;
+    background-color: white;
+    z-index: 5;
+    position: absolute;
+    border-radius: 5px;
+    transform: translateY(-5%);
+    transition: 250ms;
+    overflow-y: auto;
+
+    &.open {
+      transform: translateY(0%);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.4rem;
+      color: red;
+      cursor: pointer;
+      transition: 250ms;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
