@@ -2,19 +2,14 @@ import React, { FC, ReactNode, useEffect } from "react";
 
 import "./modal.scss";
 
-interface ModalProps {
+export interface Props {
   children: ReactNode;
   title: string;
   isOpen: boolean;
   closeHandler: () => void;
 }
 
-export const Modal: FC<ModalProps> = ({
-  children,
-  title,
-  isOpen,
-  closeHandler
-}) => {
+export const Modal: FC<Props> = ({ children, title, isOpen, closeHandler }) => {
   useEffect(() => {
     isOpen
       ? document.body.classList.add("no-scroll")
