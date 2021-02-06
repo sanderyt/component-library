@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 
 import "./Button.scss";
-import { Spinner } from "../Spinner/Spinner";
 
 interface Props {
   children: string;
@@ -27,7 +26,7 @@ export const Button: FC<Props> = ({
 
   return (
     <button onClick={clickHandler} className={classes}>
-      {isLoading ? <Spinner /> : children}
+      {children}
     </button>
   );
 };
