@@ -6,7 +6,7 @@
   "component": {
     "default": {
       "customTemplates": {
-        "component": "templates/component/component.js",
+        "component": "templates/component/component.tsx",
         "test": "templates/component/test.js"
       },
       "path": "src/components",
